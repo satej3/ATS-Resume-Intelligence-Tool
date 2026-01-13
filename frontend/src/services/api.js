@@ -1,4 +1,9 @@
 import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const analyzeResume = (formData) =>
-  axios.post("http://localhost:5000/api/analysis/analyze", formData);
+  await fetch(`${API_BASE_URL}/api/analysis/analyze`, {
+  method: "POST",
+  body: formData,
+});
+
